@@ -17,3 +17,12 @@
 ### Execution Methods
 - CreateThread
 - ThreadHijack
+
+### Usage with Arguments
+```KZInjector.exe [PID/PROCESS NAME] [Options]```
+
+Options:
+```
+-i --injection LoadLibrary / ManualMap
+-e --execution CreateThread / ThreadHijack
+```
