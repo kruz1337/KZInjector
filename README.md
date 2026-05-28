@@ -19,7 +19,7 @@
 - ThreadHijack
 
 ### Usage with Arguments
-```KZInjector.exe [PID/PROCESS NAME] [Options]```
+```KZInjector.exe [PID/PROCESS NAME] [DLL PATH] [Options]```
 
 Options:
 ```
