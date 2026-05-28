@@ -1,0 +1,79 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 20,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default-win64",
+      "hidden": true,
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_MAKE_PROGRAM": "C:/msys64/mingw64/bin/ninja.exe",
+        "CMAKE_C_COMPILER": "C:/msys64/mingw64/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "C:/msys64/mingw64/bin/g++.exe",
+        "CMAKE_C_FLAGS": "-static -static-libgcc -static-libstdc++",
+        "CMAKE_CXX_FLAGS": "-static -static-libgcc -static-libstdc++"
+      },
+      "environment": {
+        "PATH": "C:/msys64/mingw64/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "default-win32",
+      "hidden": true,
+      "generator": "Ninja",
+      "vendor": {
+        "jetbrains.com/clion": {
+          "toolchain": "MinGW x86"
+        }
+      },
+      "cacheVariables": {
+        "CMAKE_MAKE_PROGRAM": "C:/msys64/mingw32/bin/ninja.exe",
+        "CMAKE_C_COMPILER": "C:/msys64/mingw32/bin/gcc.exe",
+        "CMAKE_CXX_COMPILER": "C:/msys64/mingw32/bin/g++.exe",
+        "CMAKE_C_FLAGS": "-m32 -static -static-libgcc -static-libstdc++",
+        "CMAKE_CXX_FLAGS": "-m32 -static -static-libgcc -static-libstdc++"
+      },
+      "environment": {
+        "PATH": "C:/msys64/mingw32/bin;$penv{PATH}"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release",
+      "inherits": "default-win64",
+      "description": "Release 64-bit build",
+      "binaryDir": "bin/x64/Release"
+    },
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "inherits": "default-win64",
+      "description": "Debug 64-bit build",
+      "binaryDir": "bin/x64/Debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "release-x86",
+      "displayName": "Release (x86)",
+      "inherits": "default-win32",
+      "description": "Release 32-bit build",
+      "binaryDir": "bin/x86/Release"
+    },
+    {
+      "name": "debug-x86",
+      "displayName": "Debug (x86)",
+      "inherits": "default-win32",
+      "description": "Debug 32-bit build",
+      "binaryDir": "bin/x86/Debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    }
+  ]
+}
